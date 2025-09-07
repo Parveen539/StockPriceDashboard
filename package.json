@@ -1,0 +1,26 @@
+{
+  "name": "stockpricedashboard",
+  "version": "1.0.0",
+  "description": "Stock Price Dashboard",
+  "homepage": "https://github.com/Parveen539/StockPriceDashboard#readme",
+  "bugs": {
+    "url": "https://github.com/Parveen539/StockPriceDashboard/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parveen539/StockPriceDashboard.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "ioredis": "^5.7.0",
+    "socket.io": "^4.8.1"
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stock Dashboard</title>
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    </head>
+
+    <body>
+        <h2>Real-Time Stock Prices</h2>
+        <button onclick="subscribe('AAPL')">Subscribe AAPL</button>
+        <button onclick="subscribe('TSLA')">Subscribe TSLA</button>
+        <div id="output"></div>
+    </body>
+
+    <script>
+        const socket = io('http://localhost:3000')
+
+        function subscribe(symbol) {
+            socket.emit('subscribe', symbol)
+        }
+
+        socket.on("tick", (tick)=> {
+            const div = document.getElementById("output")
+            const p = document.createElement("p")
+            p.textContent = `${tick.symbol} : $${tick.price} (at ${new Date(tick.ts).toLocaleTimeString()})`
+            div.prepend(p)
+        })
+    </script>
+</html>
